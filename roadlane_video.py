@@ -45,7 +45,7 @@ def region_of_interest(img):
 
 def make_coordinates(image, slope, intercept):
     y1 = image.shape[0]  # height
-    y2 = int(y1*2/3)
+    y2 = int(y1*3/5)
     x1 = int((y1-intercept)/slope)
     x2 = int((y2-intercept)/slope)
     print(y1, y2)
