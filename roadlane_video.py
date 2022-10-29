@@ -24,14 +24,22 @@ def region_of_interest(img):
     # defining a blank mask to start with
     mask = np.zeros_like(img)
 
-    # defining a polygon as region of interest
-    lowerLeftPoint = [130, 540]
-    upperLeftPoint = [410, 350]
-    upperRightPoint = [570, 350]
-    lowerRightPoint = [915, 540]
+    # # defining a polygon as region of interest
+    # lowerLeftPoint = [130, 540]
+    # upperLeftPoint = [410, 350]
+    # upperRightPoint = [570, 350]
+    # lowerRightPoint = [915, 540]
+
+    # polygon = np.array([
+    #     [lowerLeftPoint, upperLeftPoint, upperRightPoint, lowerRightPoint]])
+
+    # triangle for test/image2 and test/video
+    lowerLeftPoint = [200, height]
+    upperLeftPoint = [1100, height]
+    upperRightPoint = [550, 250]
 
     polygon = np.array([
-        [lowerLeftPoint, upperLeftPoint, upperRightPoint, lowerRightPoint]])
+        [lowerLeftPoint, upperLeftPoint, upperRightPoint]])
 
     # fill(or addition of) the mask with the polygon
     cv2.fillPoly(mask, polygon, 255)
